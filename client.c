@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:33:40 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/24 17:30:11 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/05/24 18:30:44 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ int	main(int argc, char **argv)
 	int	pid;
 
 	if (argc < 3)
-		return (ft_printf("Too few arguments!"));
+		return (red("Too few arguments!"));
 	if (argc > 3)
-		return (ft_printf("Too many arguments!"));
+		return (red("Too many arguments!"));
 	if (ft_isalnum(argv[1]))
 		pid = ft_atoi(argv[1]);
 	else
-		return (ft_printf("PID is not valid!"));
+		return (red("PID is not valid!"));
 	while (argv[2] && *argv[2])
 	{
 		ft_send(pid, *argv[2]);

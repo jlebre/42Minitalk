@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   colors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 21:34:59 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/24 18:37:33 by jlebre           ###   ########.fr       */
+/*   Created: 2022/05/24 18:24:00 by jlebre            #+#    #+#             */
+/*   Updated: 2022/05/24 18:32:33 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "minitalk.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <signal.h>
-# include "./libft/libft.h"
-# include "./printf/ft_printf.h"
+void	red(char *str)
+{
+	ft_printf("\033[0;31m%s\033[0m", str);
+}
 
-#endif
+void	green(char *str)
+{
+	ft_printf("\033[0;32m%s\033[0m", str);
+}
+
+void	yellow(char *str)
+{
+	ft_printf("\033[0;33m%s\033[0m", str);
+}
