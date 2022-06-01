@@ -42,16 +42,6 @@ int	ft_strchr(const char *s, int c)
 	return (0);
 }
 
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
 int	ft_unsigned(unsigned int nb, int fd)
 {
 	int	count;

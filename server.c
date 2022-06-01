@@ -6,14 +6,51 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:36:02 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/24 15:56:25 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/01 17:45:08 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	main(void)
-{	
-	printf("%i\n", getpid());
-	pause();
+void	ft_receive(int sig)
+{
+	static char	alpha;
+	static int	bit;
+
+	if (sig == SIGUSR1)
+		alpha |= (128 >> bit);
+	bit++;
+	if (bit == 8)
+	{
+		write(1, &alpha, 1);
+		alpha = 0;
+		bit = 0;
+	}
 }
+
+int	main(void)
+{
+	ft_printf("%d\n", getpid());
+	signal(SIGUSR1, ft_receive);
+	signal(SIGUSR2, ft_receive);
+	while (1)
+		pause();
+	return (0);
+}
+
+//SIGUSR1 - 1
+//SIGUSR2 - 0
+
+/*
+	1 byte = 00000000
+	alpha = comparacao de alpha com 1 em bit
+
+	00000000
+	10000000
+	
+	00000000
+	01000000
+
+	00000000
+	00100000
+*/

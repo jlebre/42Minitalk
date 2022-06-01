@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:16:48 by jlebre            #+#    #+#             */
-/*   Updated: 2022/02/24 20:25:01 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/01 17:50:21 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include <stdarg.h>
 # include <unistd.h>
+# include "../libft/libft.h"
 
 int	ft_printf(const char *c, ...);
-int	ft_strlen(const char *str);
 int	ft_strchr(const char *s, int c);
 int	ft_putchar_fd(char c, int fd);
 int	ft_putstr_fd(char *s, int fd);

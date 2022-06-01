@@ -3,46 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:33:40 by jlebre            #+#    #+#             */
-/*   Updated: 2022/05/31 17:01:24 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/01 17:39:33 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	ft_send(int pid, char c)
-{
-	int	bit;
-
-	bit = 0;
-	while (bit < 8)
-	{
-		if (c & (1 << bit))
-			kill(pid, SIGUSR2);
-		else
-			kill(pid, SIGUSR1);
-		usleep(25);
-		bit++;
-	}
-}
-
 int	main(int argc, char **argv)
 {
 	int	pid;
+	int	bit;
 
-	if (argc < 3)
-		return (red("Too few arguments!"));
-	if (argc > 3)
-		return (red("Too many arguments!"));
-	if (ft_isalnum(argv[1]))
+	if (argc != 3)
+		return (ft_red("Arguments are not valid!"));
+	if (ft_isalnum(argv[1]) && ft_strlen(argv[1]) == 5)
 		pid = ft_atoi(argv[1]);
 	else
-		return (red("PID is not valid!"));
+		return (ft_red("PID is not valid!"));
 	while (argv[2] && *argv[2])
 	{
-		ft_send(pid, *argv[2]);
+		bit = 0;
+		while (bit < 8)
+		{
+			if (*argv[2] & (128 >> bit))
+				kill(pid, SIGUSR1);
+			else
+				kill(pid, SIGUSR2);
+			usleep(25);
+			bit++;
+		}
 		*argv[2]++;
 	}
 	return (0);
