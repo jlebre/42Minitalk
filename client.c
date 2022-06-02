@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:33:40 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/01 17:39:33 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/02 03:00:18 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 3)
 		return (ft_red("Arguments are not valid!"));
-	if (ft_isalnum(argv[1]) && ft_strlen(argv[1]) == 5)
+	if (argv[1] && ft_strlen(argv[1]) == 5)
 		pid = ft_atoi(argv[1]);
 	else
 		return (ft_red("PID is not valid!"));
@@ -32,10 +32,10 @@ int	main(int argc, char **argv)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			usleep(25);
+			usleep(500);
 			bit++;
 		}
-		*argv[2]++;
+		argv[2]++;
 	}
 	return (0);
 }

@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors.c                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 18:24:00 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/02 02:43:45 by marvin           ###   ########.fr       */
+/*   Created: 2021/10/19 19:12:56 by jlebre            #+#    #+#             */
+/*   Updated: 2022/06/02 02:24:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	ft_red(char *str)
+int	ft_strlen(const char *str)
 {
-	return (ft_printf("\033[0;31m%s\033[0m", str));
-}
+	int	i;
 
-int	ft_green(char *str)
-{
-	return (ft_printf("\033[0;32m%s\033[0m", str));
-}
-
-int	ft_yellow(char *str)
-{
-	return (ft_printf("\033[0;33m%s\033[0m", str));
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return ((int)i);
 }
