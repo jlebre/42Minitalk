@@ -6,7 +6,7 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:36:02 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/01 17:45:08 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/02 18:28:28 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ int	main(void)
 	signal(SIGUSR1, ft_receive);
 	signal(SIGUSR2, ft_receive);
 	while (1)
+	{
 		pause();
-	return (0);
+	}
 }
 
 //SIGUSR1 - 1
@@ -43,10 +44,14 @@ int	main(void)
 
 /*
 	1 byte = 00000000
-	alpha = comparacao de alpha com 1 em bit
+	alpha = comparacao de alpha com 128 em bit (10000000)
 
 	00000000
 	10000000
+	
+	Compara e depois faz >> do 1
+	Se for = retorna SIGUSR1
+	Se for != retorna SIGUSR2
 	
 	00000000
 	01000000

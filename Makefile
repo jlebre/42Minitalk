@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 21:38:50 by jlebre            #+#    #+#              #
-#    Updated: 2022/06/02 02:46:54 by marvin           ###   ########.fr        #
+#    Updated: 2022/06/02 19:13:48 by jlebre           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ $(CLIENT):
 
 clean:
 	$(RM) *.o
-	@echo "\033[0;31mServer and Client Removed!\033[0m"
+	@echo "\033[0;31m.o Files Removed!\033[0m"
 
 fclean: clean
 	$(RM) $(SERVER) $(CLIENT)
