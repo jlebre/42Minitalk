@@ -6,28 +6,23 @@
 /*   By: jlebre <jlebre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 21:33:40 by jlebre            #+#    #+#             */
-/*   Updated: 2022/06/02 19:20:18 by jlebre           ###   ########.fr       */
+/*   Updated: 2022/06/08 18:10:54 by jlebre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
-int	success(void)
-{
-	ft_green("Message Delivered!\n");
-	return (0);
-}
 
 int	main(int argc, char **argv)
 {
 	int	pid;
 	int	bit;
 
+	pid = 0;
 	if (argc != 3)
 		return (ft_red("Arguments are not valid!"));
 	if (argv[1])
 		pid = ft_atoi(argv[1]);
-	else
+	if (!pid)
 		return (ft_red("PID is not valid!"));
 	while (argv[2] && *argv[2])
 	{
@@ -38,12 +33,11 @@ int	main(int argc, char **argv)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			usleep(30);
+			usleep(50);
 			bit++;
 		}
 		argv[2]++;
 	}
-	success();
 	return (0);
 }
 
