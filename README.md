@@ -14,3 +14,5 @@ To see the .h file, [click here](https://github.com/jlebre/minitalk/blob/main/mi
 To see the Makefile [click here](https://github.com/jlebre/minitalk/blob/main/Makefile) !
 
 #
+
+![minitalk](https://user-images.githubusercontent.com/94384240/190523402-0719914a-cc3d-4919-81c4-f63e6788b078.png)
