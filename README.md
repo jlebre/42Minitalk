@@ -8,6 +8,8 @@
 
 This is the fourth project I coded at 42. The purpose was to code a small data exchange program using UNIX signals.
 
+📜 To see the project subject, [click here](https://github.com/jlebre/42Minitalk/blob/main/minitalk.pdf)!
+
 ---
 
 ## 📂 Important Files
@@ -16,13 +18,13 @@ This is the fourth project I coded at 42. The purpose was to code a small data e
 
 🔹 To see the `Makefile`, [click here](https://github.com/jlebre/42Minitalk/blob/main/Makefile)!
 
-🔹 [Server Program](https://github.com/jlebre/42Minitalk/blob/main/server.c)
+🔹 [Server Program](https://github.com/jlebre/42Minitalk/blob/main/srcs/server.c)
 
-🔹 [Client Program](https://github.com/jlebre/42Minitalk/blob/main/client.c)
+🔹 [Client Program](https://github.com/jlebre/42Minitalk/blob/main/srcs/client.c)
 
-🔹 [Signal Handler](https://github.com/jlebre/42Minitalk/blob/main/signal_handler.c)
+🔹 [Signal Handler](https://github.com/jlebre/42Minitalk/blob/main/srcs/signal_handler.c)
 
-🔹 [Utility Functions](https://github.com/jlebre/42Minitalk/blob/main/utils.c)
+🔹 [Utility Functions](https://github.com/jlebre/42Minitalk/blob/main/srcs/utils.c)
 
 ---
 
