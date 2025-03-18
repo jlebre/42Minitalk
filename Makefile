@@ -16,9 +16,14 @@ RM = @rm -fr
 NAME = 
 SERVER = server
 CLIENT = client
-SSRCS = server.c
-CSRCS = client.c
-SRC = colors.c ft_strlen.c ft_atoi.c ft_printf.c func_extra.c func_extra1.c
+SSRCS = srcs/server.c
+CSRCS = srcs/client.c
+FILE = colors.c ft_strlen.c ft_atoi.c ft_printf.c func_extra.c func_extra1.c
+
+SRCS_DIR = srcs
+
+SRC = $(addprefix $(SRCS_DIR)/, $(FILE))
+
 LIB = .
 
 all: $(SERVER) $(CLIENT)
